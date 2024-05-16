@@ -16,9 +16,6 @@ class GameOfLife:
         self.fps = 5
         self.started = False
 
-    def setRules(self):
-        pass
-
     def run(self):
         pygame.init()
         pygame.display.set_caption("Game of Life")
@@ -69,7 +66,7 @@ class GameOfLife:
                 text = font2.render(str(int(self.rules[state][neighbours])), True, (0, 0, 0))
                 window.blit(text, (width - 540 + (neighbours + 1) * cellSize,
                                    height - cellSize * 2 + ((cellSize * 2 - 10) / 3 - 24) + (cellSize * 2 - 10) / 3 * (
-                                               state + 1)))
+                                           state + 1)))
         for i in range(2, self.y):
             for j in range(self.x):
                 if self.current[i][j] == 1:
@@ -116,7 +113,7 @@ class GameOfLife:
                         text = font2.render(str(int(self.rules[row][column])), True, (0, 0, 0))
                         window.blit(text, (width - 540 + (column + 1) * cellSize,
                                            height - cellSize * 2 + ((cellSize * 2 - 10) / 3 - 24) + (
-                                                       cellSize * 2 - 10) / 3 * (
+                                                   cellSize * 2 - 10) / 3 * (
                                                    row + 1)))
                     if not self.started and pos[1] < cellSize * self.y:
                         column = pos[0] // cellSize
